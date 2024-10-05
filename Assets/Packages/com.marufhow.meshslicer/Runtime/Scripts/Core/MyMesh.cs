@@ -13,13 +13,13 @@ namespace com.marufhow.meshslicer.core
     [Serializable]
     public class MyMesh : MonoBehaviour
     {
-       
+        [SerializeField] private MeshFilter _meshFilter;
         
        public List<Vector3> _vertices;
        public List<Vector3> _normals;
        public List<Vector2> _uvs;
-       //public List<List<int>> _subMeshIndices = new List<List<int>>();
        public List<SubMeshIndices> _listOfSubMeshIndices = new List<SubMeshIndices>();
+       //public List<List<int>> _subMeshIndices = new List<List<int>>();
        
         /*public List<Vector3> Vertices = new List<Vector3>();
         public List<Vector3> Normals = new List<Vector3>();
@@ -45,8 +45,8 @@ namespace com.marufhow.meshslicer.core
                 _listOfSubMeshIndices.Add(new SubMeshIndices()); 
               //  _subMeshIndices.Add(new List<int>());
             }
-           // _subMeshIndices[triangle.SubMeshIndex].AddRange(new List<int>(3){v, v+1, v+2});
-           _listOfSubMeshIndices[triangle.SubMeshIndex].indices.AddRange(new List<int> { v, v + 1, v + 2 });
+            // _subMeshIndices[triangle.SubMeshIndex].AddRange(new List<int>(3){v, v+1, v+2});
+            _listOfSubMeshIndices[triangle.SubMeshIndex].indices.AddRange(new List<int> { v, v + 1, v + 2 });
            
         }
 
@@ -56,6 +56,26 @@ namespace com.marufhow.meshslicer.core
             _normals.Clear();
             _uvs.Clear();
             _listOfSubMeshIndices = new List<SubMeshIndices>();
+        }
+
+        public void GenerateMesh()
+        {
+            Mesh mesh = new Mesh();
+            _meshFilter.mesh = mesh;
+
+            // mesh.vertices = _vertices.ToArray();
+            // mesh.normals = _normals.ToArray();
+            // mesh.uv = _uvs.ToArray();
+           
+            mesh.SetVertices(_vertices);
+            mesh.SetNormals(_normals);
+            mesh.SetUVs(0, _uvs);
+            mesh.SetUVs(1, _uvs);
+            mesh.subMeshCount = _listOfSubMeshIndices.Count;
+            for (int i = 0; i < _listOfSubMeshIndices.Count; i++)
+            {
+                mesh.SetTriangles(_listOfSubMeshIndices[i].indices, i);
+            }
         }
     }
 
@@ -77,6 +97,24 @@ namespace com.marufhow.meshslicer.core
             Normals = new List<Vector3> { n1, n2, n3 };
             UVs = new List<Vector2> { uv1, uv2, uv3 };
             SubMeshIndex = subMeshIndex;
+        }
+    }
+    
+   
+    public class Edge
+    {
+        public List<Vector3> Vertices { get; set; }
+        public List<Vector3> Normals { get; set; }
+        public List<Vector2> UVs { get; set; }
+        public int SubMeshIndex { get; set; }
+
+        
+        public Edge()
+        {
+          
+            Vertices = new List<Vector3>(2) { Vector3.zero, Vector3.zero }; // Two empty vertices
+            Normals = new List<Vector3>(2) { Vector3.zero, Vector3.zero }; // Two empty normals
+            UVs = new List<Vector2>(2) { Vector2.zero, Vector2.zero }; // Two empty UVs
         }
     }
 }
