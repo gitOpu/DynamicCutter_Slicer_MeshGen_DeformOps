@@ -11,6 +11,8 @@ namespace com.marufhow.meshslicer.core
 
         private GameObject _visualPlane;
         public List<Vector3> addedVertices;
+
+        private Mesh _mesh;
         private void Start()
         {
             _visualPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
@@ -19,35 +21,36 @@ namespace com.marufhow.meshslicer.core
 
         public void Cut(GameObject cutObject,Vector3 pointToCut, Vector3 cutNormal)
         {
-          
+            // Create the plane in world space using the normal vector and point to cut (in world space)
+           // Plane plane = new Plane(- Vector3.right, pointToCut);
             
-           Plane plane = new Plane(Vector3.right, Vector3.zero);
-          // Plane plane = new Plane(cutObject.transform.InverseTransformDirection( Vector3.right), cutObject.transform.InverseTransformPoint(pointToCut));
-          // Plane plane = new Plane(cutObject.transform.InverseTransformDirection(-cutNormal),  cutObject.transform.InverseTransformPoint(pointToCut));
+           //Plane plane = new Plane(cutObject.transform.InverseTransformDirection(-cutNormal),  cutObject.transform.InverseTransformPoint(pointToCut));
+           Plane plane = new Plane(-Vector3.right, Vector3.zero);
+           // Plane plane = new Plane(cutObject.transform.InverseTransformDirection( Vector3.right), cutObject.transform.InverseTransformPoint(pointToCut));
            
            // VisiblePlane(plane, pointToCut);
             
-            Mesh mesh = cutObject.GetComponent<MeshFilter>().mesh;
+            _mesh = cutObject.GetComponent<MeshFilter>().mesh;
             
             addedVertices = new List<Vector3>();
             _leftMesh.Clear();
             _rightMesh.Clear();
 
-            for (var i = 0; i < mesh.subMeshCount; i++)
+            for (var i = 0; i < _mesh.subMeshCount; i++)
             {
                 // Get triangles from a mesh : Another way
-                var subMeshTriangles = mesh.GetTriangles(i); // its also return same triangles of current subMesh
+                var subMeshTriangles = _mesh.GetTriangles(i); // its also return same triangles of current subMesh
                 for (var j = 0; j < subMeshTriangles.Length; j += 3)
                 {
                     var trisA = subMeshTriangles[j];
                     var trisB = subMeshTriangles[j + 1];
                     var trisC = subMeshTriangles[j + 2];
                   
-                    Triangle triangle = GetTriangle( mesh,  trisA,  trisB,  trisC,  i); // format triangle from mesh data
+                    Triangle triangle = GetTriangle( _mesh,  trisA,  trisB,  trisC,  i); // format triangle from mesh data
 
-                    bool isLeftSideTrisA = plane.GetSide(cutObject.transform.TransformPoint(mesh.vertices[trisA]));
-                    bool isLeftSideTrisB = plane.GetSide(cutObject.transform.TransformPoint(mesh.vertices[trisB]));
-                    bool isLeftSideTrisC = plane.GetSide(cutObject.transform.TransformPoint(mesh.vertices[trisC]));
+                    bool isLeftSideTrisA = plane.GetSide(cutObject.transform.TransformPoint(_mesh.vertices[trisA]));
+                    bool isLeftSideTrisB = plane.GetSide(cutObject.transform.TransformPoint(_mesh.vertices[trisB]));
+                    bool isLeftSideTrisC = plane.GetSide(cutObject.transform.TransformPoint(_mesh.vertices[trisC]));
 
  
                     if (isLeftSideTrisA == isLeftSideTrisB && isLeftSideTrisB == isLeftSideTrisC)
@@ -55,11 +58,11 @@ namespace com.marufhow.meshslicer.core
                         // All vertices are on the same side, either fully left or fully right
                         if (isLeftSideTrisA)
                         {
-                            _leftMesh.AddTriangle(triangle);
+                         //  _leftMesh.AddTriangle(triangle);
                         }
                         else
                         {
-                            _rightMesh.AddTriangle(triangle);
+                         //   _rightMesh.AddTriangle(triangle);
                         }
                     }else
                     {
@@ -67,11 +70,126 @@ namespace com.marufhow.meshslicer.core
                         List<bool> isLeftSidedPoints = new List<bool>(3) { isLeftSideTrisA, isLeftSideTrisB, isLeftSideTrisC };
                         CutTriangle(plane, triangle, isLeftSidedPoints, i);
                     }
-                    _leftMesh.GenerateMesh();
-                    _rightMesh.GenerateMesh();
-                    cutObject.SetActive(false);
+
+                   
                 }
             }
+            FillCuttingPlane(plane);
+            
+            var originalCols = cutObject.GetComponents<Collider>();
+            foreach (var col in originalCols)
+                Destroy(col);
+            cutObject.SetActive(false);
+            
+            _leftMesh.GenerateMesh();
+            _rightMesh.GenerateMesh();
+            
+          
+        }
+
+        public List<Vector3> polygon;
+        public List<Vector3> visitedVertex;
+        private void FillCuttingPlane(Plane plane)
+        {
+            polygon = new List<Vector3>();
+            visitedVertex = new List<Vector3>();
+            for (int i = 0; i < addedVertices.Count; i++)
+            {
+                if (!visitedVertex.Contains(addedVertices[i]))
+                {
+                    polygon.Clear();
+                    polygon.Add(addedVertices[i]);
+                    polygon.Add(addedVertices[i+1]);
+                    
+                    visitedVertex.Add(addedVertices[i]);
+                    visitedVertex.Add(addedVertices[i+1]);
+
+                    CheckPolygonForThisPairs(polygon, visitedVertex, i);
+                    FillHole(polygon, plane, i);
+                    
+                }
+                
+            }
+            
+        }
+        private void CheckPolygonForThisPairs(List<Vector3> polygon, List<Vector3> visitedVertex, int step)
+        {
+            Debug.Log($"CheckPolygonForThisPairs Steps {step} visitedVertex {visitedVertex}");
+            bool stopSearch = false;
+            while (!stopSearch)
+            {
+                stopSearch = true;
+                for (int j = 0; j < addedVertices.Count; j += 2)
+                {
+                    if (addedVertices[j] == polygon[^1] && !visitedVertex.Contains(addedVertices[j+1]))
+                    {
+                        stopSearch = false;
+                        polygon.Add(addedVertices[j+1]);
+                        visitedVertex.Add(addedVertices[j+1]);
+                    }else  if (addedVertices[j+1] == polygon[^1] && !visitedVertex.Contains(addedVertices[j]))
+                    {
+                        stopSearch = false;
+                        polygon.Add(addedVertices[j]);
+                        visitedVertex.Add(addedVertices[j]);
+                    }
+                }
+            }
+           
+        }
+        private void FillHole(List<Vector3> polygon, Plane plane, int step)
+        {
+            Debug.Log($"Fill Steps {step} Polygon Vertices {polygon}, LeftMeshCount {_leftMesh._vertices.Count} Right Mesh Count  {_rightMesh._vertices.Count}");
+            Vector3 sum = Vector3.zero;
+            foreach (var item in polygon)
+            {
+                sum += item;
+            }
+            Vector3 center = sum / polygon.Count;
+
+            TriangleVertex vertexData = new TriangleVertex();
+            TriangleNormal normalData = new TriangleNormal();
+            TriangleUVs uvData = new TriangleUVs();
+            
+            
+            for (int j = 0; j < polygon.Count; j++)
+            {
+                vertexData.Vertices[0] = polygon[j];
+                vertexData.Vertices[1] = polygon[(j+1) % polygon.Count];
+                vertexData.Vertices[2] = center;
+                
+                normalData.Normals[0] = - plane.normal;
+                normalData.Normals[1] = - plane.normal;
+                normalData.Normals[2] = - plane.normal;
+                
+                uvData.UV[0] = Vector2.zero;
+                uvData.UV[1] =  Vector2.zero;;
+                uvData.UV[2] = Vector2.one * 0.5f;
+              
+            }
+            
+            Triangle triangleL = new Triangle(vertexData, normalData, uvData, _mesh.subMeshCount);
+
+            var crossL = Vector3.Cross(triangleL.Vertices[2] - triangleL.Vertices[0],
+                triangleL.Vertices[1] - triangleL.Vertices[0]);
+            var dotL = Vector3.Dot(plane.normal, crossL);
+            if(dotL < 0) FlipTriangle(triangleL);
+            _leftMesh.AddTriangle(triangleL);
+            
+           
+            normalData.Normals[0] = plane.normal;
+            normalData.Normals[1] = plane.normal;
+            normalData.Normals[2] = plane.normal;
+            
+            Triangle triangleR = new Triangle(vertexData, normalData, uvData, _mesh.subMeshCount);
+
+            var crossR = Vector3.Cross(triangleR.Vertices[2] - triangleR.Vertices[0],
+                triangleR.Vertices[1] - triangleR.Vertices[0]);
+            var dotR = Vector3.Dot(plane.normal, crossR);
+            if(dotR < 0) FlipTriangle(triangleR);
+            _rightMesh.AddTriangle(triangleR);
+            
+           
+            
         }
         public Triangle GetTriangle( Mesh mesh, int trisA, int trisB, int trisC, int subMeshIndex)
         {
@@ -237,8 +355,8 @@ namespace com.marufhow.meshslicer.core
         {
             _visualPlane.transform.position = pointToCut; //plane.normal * plane.distance;
            _visualPlane.transform.rotation = Quaternion.LookRotation(Vector3.Cross(plane.normal, Vector3.up), plane.normal);
-           
         }
+        
         /*var subMesh = mesh.GetSubMesh(i);
                for (var j = 0; j < mesh.triangles.Length - 1; j += 3)
                {

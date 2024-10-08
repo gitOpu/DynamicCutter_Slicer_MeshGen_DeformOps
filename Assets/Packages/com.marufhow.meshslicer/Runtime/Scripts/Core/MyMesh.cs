@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace com.marufhow.meshslicer.core
@@ -14,6 +15,7 @@ namespace com.marufhow.meshslicer.core
     public class MyMesh : MonoBehaviour
     {
         [SerializeField] private MeshFilter _meshFilter;
+        [SerializeField] private MeshRenderer _meshRenderer;
         
        public List<Vector3> _vertices;
        public List<Vector3> _normals;
@@ -40,13 +42,24 @@ namespace com.marufhow.meshslicer.core
             _normals.AddRange(triangle.Normals);
             _uvs.AddRange(triangle.UVs);
 
-            if (_listOfSubMeshIndices.Count < triangle.SubMeshIndex + 1)
+            // if (_listOfSubMeshIndices.Count < triangle.SubMeshIndex + 1)
+            // {
+            //     _listOfSubMeshIndices.Add(new SubMeshIndices()); 
+            //  
+            // }
+            // _listOfSubMeshIndices[triangle.SubMeshIndex].indices.AddRange(new List<int> { v, v + 1, v + 2 });
+            if(_listOfSubMeshIndices.Count < triangle.SubMeshIndex + 1)
             {
-                _listOfSubMeshIndices.Add(new SubMeshIndices()); 
-              //  _subMeshIndices.Add(new List<int>());
+                for (int i = _listOfSubMeshIndices.Count; i < triangle.SubMeshIndex + 1; i++)
+                {
+                    _listOfSubMeshIndices.Add(new SubMeshIndices());
+                }
             }
-            // _subMeshIndices[triangle.SubMeshIndex].AddRange(new List<int>(3){v, v+1, v+2});
-            _listOfSubMeshIndices[triangle.SubMeshIndex].indices.AddRange(new List<int> { v, v + 1, v + 2 });
+
+            for (int i = 0; i < 3; i++)
+            {
+                _listOfSubMeshIndices[triangle.SubMeshIndex].indices.Add(v + i);
+            }
            
         }
 
@@ -76,6 +89,21 @@ namespace com.marufhow.meshslicer.core
             {
                 mesh.SetTriangles(_listOfSubMeshIndices[i].indices, i);
             }
+            
+            var collider = gameObject.AddComponent<MeshCollider>();
+            collider.sharedMesh = mesh;
+            collider.convex = true;
+            
+            Material[] mats = new Material[mesh.subMeshCount];
+            for (int i = 0; i < mesh.subMeshCount; i++)
+            {
+                mats[i] = _meshRenderer.material;
+            }
+            _meshRenderer.materials = mats;
+            
+            var rightRigidbody = gameObject.AddComponent<Rigidbody>();
+            rightRigidbody.AddTorque(Vector3.up * 5f, ForceMode.Impulse);
+            
         }
     }
 
@@ -98,17 +126,45 @@ namespace com.marufhow.meshslicer.core
             UVs = new List<Vector2> { uv1, uv2, uv3 };
             SubMeshIndex = subMeshIndex;
         }
+
+        public Triangle(Vector3[] _vertices, Vector3[] _normals, Vector2[] _uvs, int _submeshIndex)
+        {
+            Vertices = _vertices.ToList();
+            Normals = _normals.ToList();
+            UVs = _uvs.ToList();
+            SubMeshIndex = _submeshIndex;
+        }
+            
+        public Triangle(TriangleVertex vertexData, TriangleNormal normalData, TriangleUVs uvData, int subMeshIndex)
+        {
+            // Initialize using the data from the input classes
+            Vertices = vertexData.Vertices;
+            Normals = normalData.Normals;
+            UVs = uvData.UV;
+            SubMeshIndex = subMeshIndex;
+        }
+        
+       
+    }
+    public class TriangleVertex
+    {
+        public List<Vector3> Vertices { get; set; } = new(3) { Vector3.zero, Vector3.zero, Vector3.zero };
+    }
+    public class TriangleNormal
+    {
+        public List<Vector3> Normals { get; set; } = new(3) { Vector3.zero, Vector3.zero, Vector3.zero };
+    }
+    public class TriangleUVs
+    {
+        public List<Vector2> UV{ get; set; } = new(3) { Vector2.zero, Vector2.zero, Vector2.zero };
     }
     
-   
     public class Edge
     {
         public List<Vector3> Vertices { get; set; }
         public List<Vector3> Normals { get; set; }
         public List<Vector2> UVs { get; set; }
         public int SubMeshIndex { get; set; }
-
-        
         public Edge()
         {
           

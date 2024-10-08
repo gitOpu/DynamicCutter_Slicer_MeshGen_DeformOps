@@ -5,46 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6080691-dde4-4e3b-9450-4ce4fff51634" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Model.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Model/Barrel.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Model/Barrel.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scene/MeshSlicer.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scene/MeshSlicer.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/Core.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/Core/ClickToCut.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/Core/ClickToCut.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/Core/MyCutter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/Core/MyCutter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/Core/MyMesh.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/Core/MyMesh.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/KL.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/KL/CutterController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/KL/CutterController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/KL/GenerateMesh.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/KL/GenerateMesh.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/KL/MeshTriangle.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/KL/MeshTriangle.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/CreateDynamicPlane.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/CreateDynamicPlane.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/CreateRuntimePlane.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/CreateRuntimePlane.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/MeshGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/MeshGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/PlaneController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/PlaneController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/TestScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/TestScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/TestSliceMesh.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/TestSliceMesh.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/Transparent 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/Transparent 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/Transparent.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.3dslicer/Scripts/MySlicer/Transparent.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MeshDeformation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MeshDeformation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scene/MeshSlicer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scene/MeshSlicer.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/ClickToCut.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/ClickToCut.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyMesh.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc1a0556e49244d7a68d63b625fb5ec2173e00/88/e6c4528c/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc1a0556e49244d7a68d63b625fb5ec2173e00/ca/1bbf0fab/Plane.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -73,6 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "working__mesh__deformation__generation",
@@ -119,10 +86,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1158">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1158" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -139,7 +106,8 @@
       <option name="presentableId" value="Default" />
       <updated>1728066582907</updated>
       <workItem from="1728066584164" duration="670000" />
-      <workItem from="1728098003025" duration="21442000" />
+      <workItem from="1728098003025" duration="26198000" />
+      <workItem from="1728272422465" duration="20679000" />
     </task>
     <servers />
   </component>
@@ -150,6 +118,25 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
+          <line>106</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="99" containingFunctionPresentation="Method 'FillCuttingPlane'">
+            <startOffsets>
+              <option value="4454" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4506" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
