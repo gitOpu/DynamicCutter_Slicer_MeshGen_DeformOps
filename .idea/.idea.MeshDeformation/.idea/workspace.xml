@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d6080691-dde4-4e3b-9450-4ce4fff51634" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MeshDeformation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MeshDeformation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scene/MeshSlicer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scene/MeshSlicer.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/ClickToCut.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/ClickToCut.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyMesh.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/VectorOperationsVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/VectorOperationsVisualizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/Transparent 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/Transparent 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/Transparent.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/Transparent.mat.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +109,7 @@
       <updated>1728066582907</updated>
       <workItem from="1728066584164" duration="670000" />
       <workItem from="1728098003025" duration="26198000" />
-      <workItem from="1728272422465" duration="20679000" />
+      <workItem from="1728272422465" duration="30569000" />
     </task>
     <servers />
   </component>
@@ -124,16 +126,55 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
-          <line>106</line>
+          <line>107</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="99" containingFunctionPresentation="Method 'FillCuttingPlane'">
             <startOffsets>
-              <option value="4454" />
+              <option value="4515" />
             </startOffsets>
             <endOffsets>
-              <option value="4506" />
+              <option value="4543" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
+          <line>164</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="155" containingFunctionPresentation="Method 'FillHole'">
+            <startOffsets>
+              <option value="6685" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6868" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
+          <line>171</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="162" containingFunctionPresentation="Method 'FillHole'">
+            <startOffsets>
+              <option value="6899" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6947" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
+          <line>174</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="165" containingFunctionPresentation="Method 'FillHole'">
+            <startOffsets>
+              <option value="7030" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7057" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

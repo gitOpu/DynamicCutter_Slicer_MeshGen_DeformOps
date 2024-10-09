@@ -29,8 +29,6 @@ public class VectorOperationsVisualizer : MonoBehaviour
         /*// Draw the sum of vectors (A + B)
         Vector3 sum = vectorA + vectorB;
         DrawVector(Vector3.zero, sum, colorSum, "A + B");
-
-       
         */
         
         // Draw the difference of vectors (A - B)
@@ -41,6 +39,10 @@ public class VectorOperationsVisualizer : MonoBehaviour
         // Draw the cross product (only meaningful in 3D)
         Vector3 crossProduct = Vector3.Cross(vectorA, vectorB);
         DrawVector(Vector3.zero, crossProduct, colorCrossProduct, "A x B");
+        
+        // Draw the cross product (only meaningful in 3D)
+        Vector3 crossProduct2 = Vector3.Cross( vectorB, vectorA);
+        DrawVector(Vector3.zero, crossProduct2, colorCrossProduct, "B x A");
 
         // Display the dot product as the angle between vectors A and B
         float dotProduct = Vector3.Dot(vectorA, vectorB);

@@ -58,11 +58,11 @@ namespace com.marufhow.meshslicer.core
                         // All vertices are on the same side, either fully left or fully right
                         if (isLeftSideTrisA)
                         {
-                         //  _leftMesh.AddTriangle(triangle);
+                          _leftMesh.AddTriangle(triangle);
                         }
                         else
                         {
-                         //   _rightMesh.AddTriangle(triangle);
+                           _rightMesh.AddTriangle(triangle);
                         }
                     }else
                     {
@@ -75,6 +75,7 @@ namespace com.marufhow.meshslicer.core
                 }
             }
             FillCuttingPlane(plane);
+            // FillCut(addedVertices, plane,_leftMesh,_rightMesh);
             
             var originalCols = cutObject.GetComponents<Collider>();
             foreach (var col in originalCols)
@@ -104,15 +105,16 @@ namespace com.marufhow.meshslicer.core
                     visitedVertex.Add(addedVertices[i]);
                     visitedVertex.Add(addedVertices[i+1]);
 
-                    CheckPolygonForThisPairs(polygon, visitedVertex, i);
-                    FillHole(polygon, plane, i);
-                    
+                    CheckPolygonForThisPairs(i);
+                    FillHole(plane, i);
+                  // Fill(polygon, plane, _leftMesh, _rightMesh, i);
+
                 }
                 
             }
             
         }
-        private void CheckPolygonForThisPairs(List<Vector3> polygon, List<Vector3> visitedVertex, int step)
+        private void CheckPolygonForThisPairs(int step)
         {
             Debug.Log($"CheckPolygonForThisPairs Steps {step} visitedVertex {visitedVertex}");
             bool stopSearch = false;
@@ -136,7 +138,10 @@ namespace com.marufhow.meshslicer.core
             }
            
         }
-        private void FillHole(List<Vector3> polygon, Plane plane, int step)
+
+        public List<Vector2> UVs;
+        
+        private void FillHole(Plane plane, int step)
         {
             Debug.Log($"Fill Steps {step} Polygon Vertices {polygon}, LeftMeshCount {_leftMesh._vertices.Count} Right Mesh Count  {_rightMesh._vertices.Count}");
             Vector3 sum = Vector3.zero;
@@ -149,10 +154,44 @@ namespace com.marufhow.meshslicer.core
             TriangleVertex vertexData = new TriangleVertex();
             TriangleNormal normalData = new TriangleNormal();
             TriangleUVs uvData = new TriangleUVs();
+
+
+            UVs = HelperFunction.ConvertToUV(plane.normal, polygon);
+            
+            //TODO: find max axis as normal of the plane
+            // TODO: find other tow axis smaller and largest value
+            // todo: then write normalize function to get data 0 to 1
+            
+            // Vector3 up = new Vector3()
+            // {
+            //     x =  plane.normal.x,
+            //     y =  plane.normal.y,
+            //     z =  plane.normal.z
+            // };
+            //
+            // Vector3 left = Vector3.Cross( plane.normal, up);
+            //
+            // Vector3 displacement = Vector3.zero;
+            // Vector2 uv1 = Vector2.zero;
+            // Vector2 uv2 = Vector2.zero;
             
             
             for (int j = 0; j < polygon.Count; j++)
             {
+              /*  displacement = polygon[j] - center;
+                uv1 = new Vector2()
+                {
+                    x = .5f + Vector3.Dot(displacement, left),
+                    y = .5f + Vector3.Dot(displacement, up)
+                };
+
+                displacement = polygon[(j + 1) % polygon.Count] - center;
+                uv2 = new Vector2()
+                { 
+                    x = .5f + Vector3.Dot(displacement, left),
+                    y = .5f + Vector3.Dot(displacement, up)
+                };*/
+                
                 vertexData.Vertices[0] = polygon[j];
                 vertexData.Vertices[1] = polygon[(j+1) % polygon.Count];
                 vertexData.Vertices[2] = center;
@@ -161,33 +200,38 @@ namespace com.marufhow.meshslicer.core
                 normalData.Normals[1] = - plane.normal;
                 normalData.Normals[2] = - plane.normal;
                 
-                uvData.UV[0] = Vector2.zero;
-                uvData.UV[1] =  Vector2.zero;;
-                uvData.UV[2] = Vector2.one * 0.5f;
-              
+                uvData.UV[0] = UVs[j];
+                uvData.UV[1] =  UVs[(j+1) % polygon.Count];
+                uvData.UV[2] = new Vector2(0.5f, 0.5f);
+                
+                
+                Triangle triangleL = new Triangle(vertexData, normalData, uvData, _mesh.subMeshCount+1);
+
+                var crossL = Vector3.Cross(triangleL.Vertices[1] - triangleL.Vertices[0], 
+                    triangleL.Vertices[2] - triangleL.Vertices[0]);
+                var dotL = Vector3.Dot( crossL, normalData.Normals[0]);
+                if(dotL < 0) FlipTriangle(triangleL);
+                _leftMesh.AddTriangle(triangleL);
+                
+                // Right part of the mesh
+                normalData.Normals[0] = plane.normal;
+                normalData.Normals[1] = plane.normal;
+                normalData.Normals[2] = plane.normal;
+            
+                Triangle triangleR = new Triangle(vertexData, normalData, uvData, _mesh.subMeshCount+1);
+
+                var crossR = Vector3.Cross(triangleR.Vertices[1] - triangleR.Vertices[0], 
+                    triangleR.Vertices[2] - triangleR.Vertices[0]);
+                
+                var dotR = Vector3.Dot(crossR, normalData.Normals[0]);
+                if(dotR < 0) FlipTriangle(triangleR);
+                _rightMesh.AddTriangle(triangleR);
+                
             }
             
-            Triangle triangleL = new Triangle(vertexData, normalData, uvData, _mesh.subMeshCount);
-
-            var crossL = Vector3.Cross(triangleL.Vertices[2] - triangleL.Vertices[0],
-                triangleL.Vertices[1] - triangleL.Vertices[0]);
-            var dotL = Vector3.Dot(plane.normal, crossL);
-            if(dotL < 0) FlipTriangle(triangleL);
-            _leftMesh.AddTriangle(triangleL);
+           
             
            
-            normalData.Normals[0] = plane.normal;
-            normalData.Normals[1] = plane.normal;
-            normalData.Normals[2] = plane.normal;
-            
-            Triangle triangleR = new Triangle(vertexData, normalData, uvData, _mesh.subMeshCount);
-
-            var crossR = Vector3.Cross(triangleR.Vertices[2] - triangleR.Vertices[0],
-                triangleR.Vertices[1] - triangleR.Vertices[0]);
-            var dotR = Vector3.Dot(plane.normal, crossR);
-            if(dotR < 0) FlipTriangle(triangleR);
-            _rightMesh.AddTriangle(triangleR);
-            
            
             
         }
@@ -350,7 +394,18 @@ namespace com.marufhow.meshslicer.core
             (tris.UVs[2], tris.UVs[0]) = (tris.UVs[0], tris.UVs[2]);
         }
 
-
+        // private   void FlipTriangel(Triangle _triangle)
+        // {
+        //     Vector3 temp = _triangle.Vertices[2];
+        //     _triangle.Vertices[2] = _triangle.Vertices[0];
+        //     _triangle.Vertices[0] = temp;
+        //
+        //     temp = _triangle.Normals[2];
+        //     _triangle.Normals[2] = _triangle.Normals[0];
+        //     _triangle.Normals[0] = temp;
+        //
+        //     (_triangle.UVs[2], _triangle.UVs[0]) = (_triangle.UVs[0], _triangle.UVs[2]);
+        // }
         private void VisiblePlane(Plane plane, Vector3 pointToCut)
         {
             _visualPlane.transform.position = pointToCut; //plane.normal * plane.distance;
@@ -373,5 +428,8 @@ namespace com.marufhow.meshslicer.core
 
                    _leftMesh.AddTriangle(triangle);
                }*/
+         
+    
+   
     }
 }
