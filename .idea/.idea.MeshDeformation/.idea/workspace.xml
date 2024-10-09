@@ -6,12 +6,57 @@
   <component name="ChangeListManager">
     <list default="true" id="d6080691-dde4-4e3b-9450-4ce4fff51634" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MeshDeformation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MeshDeformation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/VectorOperationsVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/VectorOperationsVisualizer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/Transparent 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/Transparent 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/Transparent.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/Transparent.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/CubeMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/CubeMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/Layer 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/Layer 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/NewUnlitShader.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/NewUnlitShader.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/Transparent 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/Transparent 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/Transparent.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Materials/Transparent.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Model.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Model/Barrel.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Model/Barrel.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Model/Floor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Model/Floor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scene/MeshSlicer.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scene/MeshSlicer.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/ClickToCut.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/ClickToCut.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHMesh.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyMesh.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHMesh.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/TestScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/TestScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/VectorOperationsVisualizer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/VectorOperationsVisualizer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/KL.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/KL/CutterController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/KL/CutterController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/KL/GenerateMesh.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/KL/GenerateMesh.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/KL/MeshTriangle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/KL/MeshTriangle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/CreateDynamicPlane.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/CreateDynamicPlane.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/CreateRuntimePlane.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/CreateRuntimePlane.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/MeshGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/MeshGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/PlaneController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/PlaneController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/TestScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/TestScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/TestSliceMesh.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/MySlicer/TestSliceMesh.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +67,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/SlicedGameObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc1a0556e49244d7a68d63b625fb5ec2173e00/88/e6c4528c/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc1a0556e49244d7a68d63b625fb5ec2173e00/ca/1bbf0fab/Plane.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -39,28 +85,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "working__mesh__deformation__generation",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.77641654&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;working__mesh__deformation__generation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/macbook/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/macbook/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/macbook/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/macbook/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/macbook/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/macbook/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.14f1/Unity.app/Contents/MacOS/Unity" />
@@ -88,10 +135,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1158">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="1158" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -109,7 +156,8 @@
       <updated>1728066582907</updated>
       <workItem from="1728066584164" duration="670000" />
       <workItem from="1728098003025" duration="26198000" />
-      <workItem from="1728272422465" duration="30569000" />
+      <workItem from="1728272422465" duration="35873000" />
+      <workItem from="1728443869828" duration="15457000" />
     </task>
     <servers />
   </component>
@@ -125,56 +173,43 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
-          <line>107</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="99" containingFunctionPresentation="Method 'FillCuttingPlane'">
+          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs</url>
+          <line>43</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs" initialLine="56" containingFunctionPresentation="Method 'Cut'">
             <startOffsets>
-              <option value="4515" />
+              <option value="1514" />
             </startOffsets>
             <endOffsets>
-              <option value="4543" />
+              <option value="1532" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
-          <line>164</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="155" containingFunctionPresentation="Method 'FillHole'">
+          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs</url>
+          <line>44</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs" initialLine="57" containingFunctionPresentation="Method 'Cut'">
             <startOffsets>
-              <option value="6685" />
+              <option value="1545" />
             </startOffsets>
             <endOffsets>
-              <option value="6868" />
+              <option value="1564" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
-          <line>171</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="162" containingFunctionPresentation="Method 'FillHole'">
+          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs</url>
+          <line>46</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs" initialLine="59" containingFunctionPresentation="Method 'Cut'">
             <startOffsets>
-              <option value="6899" />
+              <option value="1578" />
             </startOffsets>
             <endOffsets>
-              <option value="6947" />
+              <option value="1622" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs</url>
-          <line>174</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MyCutter.cs" initialLine="165" containingFunctionPresentation="Method 'FillHole'">
-            <startOffsets>
-              <option value="7030" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7057" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
