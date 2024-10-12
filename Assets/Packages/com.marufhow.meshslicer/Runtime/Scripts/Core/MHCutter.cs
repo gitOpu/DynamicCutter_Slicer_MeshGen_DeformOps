@@ -17,16 +17,17 @@ namespace com.marufhow.meshslicer.core
         private Mesh _mesh;
         private int _count;
         
-        [Header("Only for observe in Inspector, not for set anything")]
-        public List<Vector3> addedVertices;
-        public List<Vector3> fillAreaVertex;
-        public List<Vector2> UVs;
-        public void Cut(GameObject cutObject,Vector3 cutPoint, Vector3 hitNormal)
+        private List<Vector3> _addedVertices;
+        private List<Vector3> _fillAreaVertex;
+        private List<Vector2> _uvs;
+        public void Cut(GameObject cutObject,Vector3 cutPoint, Vector3 cutNormal)
         {
-            Plane plane = new Plane(-hitNormal, new Vector3(cutPoint.x,cutPoint.y,0));
+            // The InverseTransformDirection method is used here to convert the cutNormal from world space to the local space of the cutObject.
+            Plane plane = new Plane(cutObject.transform.InverseTransformDirection(-cutNormal),  
+                cutObject.transform.InverseTransformPoint(cutPoint));
             
             _mesh = cutObject.GetComponent<MeshFilter>().mesh;
-            addedVertices = new List<Vector3>();
+            _addedVertices = new List<Vector3>();
             
             _leftMesh = cutObject.GetComponent<MHMesh>();
             if (_leftMesh == null)
@@ -97,18 +98,18 @@ namespace com.marufhow.meshslicer.core
        
         private void FillCuttingPlane(Plane plane)
         {
-            fillAreaVertex = new List<Vector3>();
+            _fillAreaVertex = new List<Vector3>();
             List<Vector3> visitedVertex = new List<Vector3>();
-            for (int i = 0; i < addedVertices.Count; i++)
+            for (int i = 0; i < _addedVertices.Count; i++)
             {
-                if (!visitedVertex.Contains(addedVertices[i]))
+                if (!visitedVertex.Contains(_addedVertices[i]))
                 {
-                    fillAreaVertex.Clear();
-                    fillAreaVertex.Add(addedVertices[i]);
-                    fillAreaVertex.Add(addedVertices[i+1]);
+                    _fillAreaVertex.Clear();
+                    _fillAreaVertex.Add(_addedVertices[i]);
+                    _fillAreaVertex.Add(_addedVertices[i+1]);
                     
-                    visitedVertex.Add(addedVertices[i]);
-                    visitedVertex.Add(addedVertices[i+1]);
+                    visitedVertex.Add(_addedVertices[i]);
+                    visitedVertex.Add(_addedVertices[i+1]);
 
                     CheckPolygonForThisPairs(visitedVertex, i);
                     FillHole(plane, i);
@@ -124,18 +125,18 @@ namespace com.marufhow.meshslicer.core
             while (!stopSearch)
             {
                 stopSearch = true;
-                for (int j = 0; j < addedVertices.Count; j += 2)
+                for (int j = 0; j < _addedVertices.Count; j += 2)
                 {
-                    if (addedVertices[j] == fillAreaVertex[^1] && !visitedVertex.Contains(addedVertices[j+1]))
+                    if (_addedVertices[j] == _fillAreaVertex[^1] && !visitedVertex.Contains(_addedVertices[j+1]))
                     {
                         stopSearch = false;
-                        fillAreaVertex.Add(addedVertices[j+1]);
-                        visitedVertex.Add(addedVertices[j+1]);
-                    }else  if (addedVertices[j+1] == fillAreaVertex[^1] && !visitedVertex.Contains(addedVertices[j]))
+                        _fillAreaVertex.Add(_addedVertices[j+1]);
+                        visitedVertex.Add(_addedVertices[j+1]);
+                    }else  if (_addedVertices[j+1] == _fillAreaVertex[^1] && !visitedVertex.Contains(_addedVertices[j]))
                     {
                         stopSearch = false;
-                        fillAreaVertex.Add(addedVertices[j]);
-                        visitedVertex.Add(addedVertices[j]);
+                        _fillAreaVertex.Add(_addedVertices[j]);
+                        visitedVertex.Add(_addedVertices[j]);
                     }
                 }
             }
@@ -145,34 +146,34 @@ namespace com.marufhow.meshslicer.core
         
         private void FillHole(Plane plane, int step)
         {
-            Debug.Log($"Fill Steps {step} Polygon Vertices {fillAreaVertex}, LeftMeshCount {_leftMesh._vertices.Count} Right Mesh Count  {_rightMesh._vertices.Count}");
+            Debug.Log($"Fill Steps {step} Polygon Vertices {_fillAreaVertex}, LeftMeshCount {_leftMesh._vertices.Count} Right Mesh Count  {_rightMesh._vertices.Count}");
             Vector3 sum = Vector3.zero;
-            foreach (var item in fillAreaVertex)
+            foreach (var item in _fillAreaVertex)
             {
                 sum += item;
             }
-            Vector3 center = sum / fillAreaVertex.Count;
+            Vector3 center = sum / _fillAreaVertex.Count;
 
             TriangleVertex vertexData = new TriangleVertex();
             TriangleNormal normalData = new TriangleNormal();
             TriangleUVs uvData = new TriangleUVs();
 
 
-            UVs = HelperFunction.ConvertToUV(plane.normal, fillAreaVertex);
+            _uvs = HelperFunction.ConvertToUV(plane.normal, _fillAreaVertex);
             
              
-            for (int j = 0; j < fillAreaVertex.Count; j++)
+            for (int j = 0; j < _fillAreaVertex.Count; j++)
             {
-                vertexData.Vertices[0] = fillAreaVertex[j];
-                vertexData.Vertices[1] = fillAreaVertex[(j+1) % fillAreaVertex.Count];
+                vertexData.Vertices[0] = _fillAreaVertex[j];
+                vertexData.Vertices[1] = _fillAreaVertex[(j+1) % _fillAreaVertex.Count];
                 vertexData.Vertices[2] = center;
                 
                 normalData.Normals[0] = - plane.normal;
                 normalData.Normals[1] = - plane.normal;
                 normalData.Normals[2] = - plane.normal;
                 
-                uvData.UV[0] = UVs[j];
-                uvData.UV[1] =  UVs[(j+1) % fillAreaVertex.Count];
+                uvData.UV[0] = _uvs[j];
+                uvData.UV[1] =  _uvs[(j+1) % _fillAreaVertex.Count];
                 uvData.UV[2] = new Vector2(0.5f, 0.5f);
                 
                 
@@ -263,7 +264,7 @@ namespace com.marufhow.meshslicer.core
                 Vector3 vertexOnL0R0 =  Vector3.Lerp(leftEdge.Vertices[0], rightEdge.Vertices[0], normalizedDistanceL0R0);
                 Vector3 normalOnL0R0 =  Vector3.Lerp(leftEdge.Normals[0], rightEdge.Normals[0], normalizedDistanceL0R0);
                 Vector3 uvOnL0R0 =  Vector3.Lerp(leftEdge.UVs[0], rightEdge.UVs[0], normalizedDistanceL0R0);
-                addedVertices.Add(vertexOnL0R0);
+                _addedVertices.Add(vertexOnL0R0);
             
             
             Ray rayL1R1 = new Ray(leftEdge.Vertices[1], rightEdge.Vertices[1] - leftEdge.Vertices[1]);
@@ -273,7 +274,7 @@ namespace com.marufhow.meshslicer.core
                 Vector3 vertexOnL1R1 =  Vector3.Lerp(leftEdge.Vertices[1], rightEdge.Vertices[1], normalizedDistanceL1R1);
                 Vector3 normalOnL1R1 =  Vector3.Lerp(leftEdge.Normals[1], rightEdge.Normals[1], normalizedDistanceL1R1);
                 Vector3 uvOnL1R1 =  Vector3.Lerp(leftEdge.UVs[1], rightEdge.UVs[1], normalizedDistanceL1R1);
-                addedVertices.Add(vertexOnL1R1);
+                _addedVertices.Add(vertexOnL1R1);
 
                 // Add 1st vertex to left mesh
                 if (leftEdge.Vertices[0] != vertexOnL0R0 && leftEdge.Vertices[0] != vertexOnL1R1)

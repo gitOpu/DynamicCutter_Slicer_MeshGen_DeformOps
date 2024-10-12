@@ -1,6 +1,6 @@
 {
   "name": "com.marufhow.meshslicer.editor",
-  "references": [],
+  "references": ["GUID:bd30378004a354b0cbf968486f2e2e34"],
   "optionalUnityReferences": [],
   "includePlatforms": ["Editor"],
   "excludePlatforms": [],

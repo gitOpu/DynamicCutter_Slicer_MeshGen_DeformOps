@@ -1,0 +1,11 @@
+.mh-cutter-inspector {
+    padding: 0;
+}
+
+.mh-cutter-icon {
+    width: 64px;
+    height: 64px;
+    background-image: url('project://database/Assets/Packages/com.marufhow.meshslicer/Editor/Resources/Icon.png?fileID=2800000&guid=4efd6bc8bb55e4b3bb89f1b15c9da563&type=3#Icon');
+    background-size: cover;
+    margin-bottom: 10px;
+}
