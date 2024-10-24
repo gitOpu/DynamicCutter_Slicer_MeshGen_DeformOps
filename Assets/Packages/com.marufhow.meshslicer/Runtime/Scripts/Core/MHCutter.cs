@@ -120,7 +120,7 @@ namespace com.marufhow.meshslicer.core
         }
         private void CheckPolygonForThisPairs(List<Vector3> visitedVertex, int step)
         {
-            Debug.Log($"CheckPolygonForThisPairs Steps {step} visitedVertex {visitedVertex}");
+            
             bool stopSearch = false;
             while (!stopSearch)
             {
@@ -146,7 +146,6 @@ namespace com.marufhow.meshslicer.core
         
         private void FillHole(Plane plane, int step)
         {
-            Debug.Log($"Fill Steps {step} Polygon Vertices {_fillAreaVertex}, LeftMeshCount {_leftMesh._vertices.Count} Right Mesh Count  {_rightMesh._vertices.Count}");
             Vector3 sum = Vector3.zero;
             foreach (var item in _fillAreaVertex)
             {

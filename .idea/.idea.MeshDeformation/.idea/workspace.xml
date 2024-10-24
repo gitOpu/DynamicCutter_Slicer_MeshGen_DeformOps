@@ -6,69 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d6080691-dde4-4e3b-9450-4ce4fff51634" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MeshDeformation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MeshDeformation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh Generation.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mesh Generation.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/GlowShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/GlowShader.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/Orange.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/Orange.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/Orange.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/Orange.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/OrangeInside.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/OrangeInside.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/OrangeMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/OrangeMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/Orange_Insdie.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/ORange Texture/Orange_Insdie.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/UnlitUVChecker.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/UnlitUVChecker.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/UnlitUVChecker.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/UnlitUVChecker.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/Unlit_GlowShader.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Materials/Unlit_GlowShader.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Model.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Model/Barrel.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Model/Barrel.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Model/Floor.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Model/Floor.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Scene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Scene/MeshSlicer.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Scene/MeshSlicer.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Script.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Script/ClickToCut.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Sample/Script/ClickToCut.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Editor/com.marufhow.meshslicer.editor.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Editor/com.marufhow.meshslicer.editor.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/LICENSE.md.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/README.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Demo/Scene/MeshSlicer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Demo/Scene/MeshSlicer.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Demo/Shaders/ORange Texture/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Demo/Shaders/ORange Texture/Orange.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Demo/Shaders/ORange Texture/OrangeInside.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Demo/Shaders/ORange Texture/OrangeInside.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Demo/Shaders/ORange Texture/OrangeMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Demo/Shaders/ORange Texture/OrangeMaterial.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Core/MHCutter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Others.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Others/MeshGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Others/MeshGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Others/VectorOperationsVisualizer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/Runtime/Scripts/Others/VectorOperationsVisualizer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/ThirdPartyNotices.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/ThirdPartyNotices.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/com.marufhow.meshslicer/package.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UPMAssistant.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UPMAssistant/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UPMAssistant/Editor/Data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UPMAssistant/Editor/Data/licenseURLData.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UPMAssistant/Editor/Data/licenseURLData.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UPMAssistant/Editor/Data/packageNameData.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UPMAssistant/Editor/Data/packageNameData.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,29 +40,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.77641654",
-    "git-widget-placeholder": "assetstore__publishing",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.77641654&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;assetstore__publishing&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/macbook/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/macbook/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/macbook/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/macbook/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/macbook/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/macbook/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.14f1/Unity.app/Contents/MacOS/Unity" />
@@ -171,6 +114,8 @@
       <workItem from="1728272422465" duration="35873000" />
       <workItem from="1728443869828" duration="15457000" />
       <workItem from="1728634867658" duration="9665000" />
+      <workItem from="1729668855357" duration="150000" />
+      <workItem from="1729756484178" duration="49000" />
     </task>
     <servers />
   </component>
